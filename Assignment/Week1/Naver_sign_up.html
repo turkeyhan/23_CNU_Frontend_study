@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naver sign up page</title>
+    <style>
+        /* body background-color set*/
+        body{
+            background-color: #F5F5F5;
+        }
+        /* delete white space*/
+        * {
+            margin:0;
+            padding:0;
+        }
+        /* center alignment*/
+        div{
+            width:460px;
+            margin:30px auto;
+        }
+        /* delete list icon and set margin */ 
+        li{
+            list-style:none;
+            margin: 15px 0;
+        }
+        /*input and select tag top-bottom size*/
+        input, select {
+            height:50px;
+        }
+        /*Only month part set*/
+        select#month{
+            width:172px;
+            height:54px;
+        }
+        img{
+            width: 200px;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            transform: translate(70%, 0%);
+        }
+        label{
+            line-height: 30px;
+        }
+        button{
+            font-size:15px;
+            cursor:pointer;
+            color:white;
+            display:block;
+            background-color: #090;
+            border:0px solid #090;
+        }
+        #bt_verinum{
+            padding: 17px 30px;
+            float: right;
+        }
+        .sub{
+            padding: 20px 200px;
+            transform: translate(1%, 0%);
+        }
+        label{
+            font-size:15px;
+            font-weight:bold;
+        }
+
+        #sex{
+            width:460px;
+        }
+        #sel_tel{
+            width:460px;
+        }
+        #tel{
+            width:250px;
+        }
+        small{
+            color:#999;
+        }
+        .id_url{
+            position: absolute;
+            line-height: 50px;
+            font-size: 15px;
+            color:#999;
+        }
+        #new_id{
+            width:370px;
+            height:50px;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    <div>
+        <a href="http://www.naver.com"><img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Naver_Logotype.svg/1200px-Naver_Logotype.svg.png" alt="logo"/></a>
+    
+        <form>
+            <ul>
+                <li>
+                    <label for="new_id">ID<br></label>
+                    <input type="text" id="new_id" size="61" required>
+                    <span class="id_url">@naver.com</span>  
+                </li>
+
+                <li>
+                    <label for="new_pwd">Password</label>
+                    <input type="password" id="new_pwd" size="61" required>
+                </li>
+
+                <li>
+                    <label for="ck_pwd">Password check</label>
+                    <input type="password" id="ck_pwd" size="61" required>
+                </li>
+
+                <li>
+                    <label for="new_name">Name</label>
+                    <input type="text" id="new_name" size="61" required>
+                </li>
+
+                <li>
+                    <label for="year">Birth date<br></label>
+                    <input type="text" id="year" size="15" placeholder="Year(4 characters)" required>
+
+                    <select id="month">
+                        <option value="0">Month</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    
+                    <input type="text" id="day" size="15" placeholder="Day" required>
+                </li>
+
+                <li>
+                    <label for="sex">Sex</label>
+                    <select id="sex">
+                        <option value="select">Sex</option>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                    </select>
+                </li>
+
+                <li>
+                    <label for="em">Identity verification email<small>(Not required)</small></label>
+                    <input type="email" id="em" size="61" placeholder="Not required">
+                </li>
+
+                <li>
+                    <label for="sel_tel">Phone number</label>
+                    <select id="sel_tel">
+                        <option value="korea">South korea +82</option>
+                    </select>
+                </li>
+
+                <li>
+                    <input type="tel" id="tel" size="32" placeholder="Input phone number" required>
+                    <button type="button" id="bt_verinum">Get verification code</button>
+                </li>
+
+                <li>
+                    <input type="text" id="verification" size="61" placeholder="Input verification code" required>
+                </li>
+
+                <li>
+                    <button type="submit" class="sub">Sign up</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+</body>
+</html>
