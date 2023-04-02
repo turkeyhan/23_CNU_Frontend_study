@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week_2</title>
+</head>
+
+<body>
+    <!--difference of div and span-->
+    <!--inline is just wrapping with tag(span), but block stretches along row(div). -->
+
+    <script>
+        /*
+        const me = {
+            name:"turkeyhan",
+            age:26,
+            semester: 5,
+            homeAddress:{
+                si: "Gyunggi",
+                gu: "manan",
+            },
+            attendingClasses:[
+                {professor: "JuhoKim", class: "JAVA"}
+            ],
+        };
+        */
+
+        /*
+        const name = "turkeyhan";
+        console.log(`Hi, my name is ${name}.`);
+        */
+
+        /*
+        function printMyname(name, age, price){
+            console.log(name, age, price);
+        }
+        printMyname("123", "123", "!23");
+        const printMyLocation = () =>{
+
+        };
+        printMyLocation();
+        */
+
+        /*
+        function handleKeyDownEvent(event){}
+        window.addEventListener("keydown", handleKeyDownEvent);
+        window.addEventListener("keypress", handleKeyDownEvent);
+        */
+
+        /*Anonymous function call
+        (function (){
+            console.log("NAMED");
+        })();
+        */
+
+        /*
+        const students = [
+            { name: "dongzoolee", age: 24, major: "computerScience" },
+            { name: "qubeenyoung", age: 23, major: "computerScience" },
+            { name: "tonynamy", age: 22, major: "computerScience" },
+            { name: "turkeyhan", age: "??", major: "computerScience" },
+            { name: "albatros", age: 20, major: "art&technology" },
+        ];*/
+
+        /* Imperative 
+        for(let i = 0; i < data.length; i++){
+            console.log(data[i]);
+        }*/
+        /* Declarative
+        data.forEach((data) => {
+            console.log(data[i]);
+        });*/
+
+        /* for Each
+        students.forEach((student) => {
+            console.log(student);
+        });
+        */
+
+        /* map
+        console.log(
+            students.map((student, index) =>{
+                return {
+                    index: index,
+                    name: student.name,
+                };
+            })
+        );*/
+
+        /* filter
+        console.log(
+            students.filter((student, index) => {
+                return student.age == 24;
+            })
+        );*/
+
+        /*Destructuring assignment
+        const {name, age, major} = students[0];
+        console.log(name, age, major);
+
+        const [first, second, ...others] = students;
+        console.log(first, second);*/
+
+
+        /* undefined error code
+        const {name, age} = undefined;*/
+
+        /*
+        const students = [
+            {
+                name: 'doun513',
+                score: 13,
+            },
+            {
+                name: 'dongyi97',
+                score: 81,
+            },
+            {
+                name: 'minwoo2246',
+                score: 11,
+            },
+            {
+                name: 'ruffdiesel',
+                score: 71,
+            },
+            {
+                name: 'wiishj',
+                score: 49,
+            },
+            {
+                name: 'naaadang',
+                score: 15,
+            },
+            {
+                name: 'heize0502',
+                score: 43,
+            },
+            {
+                name: 'wnwjdqkr',
+                score: 74,
+            },
+            {
+                name: 'Runphg',
+                score: 37,
+            },
+            {
+                name: 'Greenapple0101',
+                score: 0,
+            },
+            {
+                name: 'wjm9765',
+                score: 72,
+            },
+            {
+                name: 'xitxth',
+                score: 71,
+            },
+            {
+                name: 'minwoooya',
+                score: 63,
+            },
+            {
+                name: '3astisland',
+                score: 87,
+            },
+            {
+                name: 'Dlans00',
+                score: 35,
+            },
+            {
+                name: '01choco',
+                score: 51,
+            },
+            {
+                name: 'qubeenyoung',
+                score: 98,
+            },
+            {
+                name: 'dltmddus02',
+                score: 15,
+            },
+            {
+                name: 'eatingrabbit',
+                score: 51,
+            },
+            {
+                name: '77hannah77',
+                score: 69,
+            },
+            {
+                name: 'Sudorae',
+                score: 18,
+            },
+            {
+                name: 'minseok209',
+                score: 11,
+            },
+            {
+                name: 'turkeyhan',
+                score: 74,
+            },
+        ];
+        const [firstStudent, ...others] = students;
+        console.log(firstStudent, others);*/
+
+        /*
+        const data = {
+            name: "turkeyhan",
+            age: 26,
+            major: "conputerScience",
+            height: 182,
+        };
+        const {name, ...others} = data;
+        console.log(name, others);
+        */
+
+        /*
+        const scores = [100, 80, 50];
+        const newScores = [200, ...scores, 30];
+        console.log(scores, newScores);
+        */
+
+        /*
+        const obj = { "name": "turkeyhan" };
+        console.log(obj.age); // undefined
+        */
+
+        /*
+        let count;
+        console.log(count); // undefined
+        */
+
+        /*deep-copy
+        let name = "turkeyhan";
+        let newName = name;
+        newName ="123";
+        console.log(name, newName);
+        */ 
+        
+        /*shallow-copy
+        let datas = [
+            {
+                name: "turkeyhan",
+                age: 26,
+            },
+        ];
+        let me = datas[0];
+        me.name = "qubeen";
+        console.log({me});
+        console.log(datas);
+        */ 
+            
+        // By using spread operator, we can use deep-copy
+        // ex. let newDatas = [...datas];
+
+    </script>
+</body>
+
+</html>

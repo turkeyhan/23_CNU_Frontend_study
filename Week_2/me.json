@@ -1,0 +1,13 @@
+{
+    "name":"turkeyhan",
+    "age":26,
+    "semester": 5,
+    "homeAddress":{
+        "si": "Gyunggi",
+        "gu": "manan"
+    },
+    "attendingClasses":[
+        {"professor": "JuhoKim", "className": "JAVA"},
+        {"professor": "JuhoKim", "className": "JAVA"}
+    ]
+}

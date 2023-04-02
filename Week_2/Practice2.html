@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>학생 이름</th>
+          <th>점수</th>
+          <th>학년</th>
+          <th>도로명 주소</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      const students = [
+        {
+          name: 'doun513',
+          score: 13,
+          grade: 4,
+          homeAddress: {
+            si: '서울시',
+            gu: '마포구',
+            roadname: '백범로',
+          },
+        },
+        {
+          name: 'dongyi97',
+          score: 81,
+          grade: 4,
+        },
+        {
+          name: 'minwoo2246',
+          score: 11,
+          homeAddress: {
+            si: '서울시',
+            gu: '동작구',
+            roadname: '봉동',
+          },
+        },
+        {
+          name: 'ruffdiesel',
+          score: 71,
+          grade: 4,
+        },
+        {
+          name: 'wiishj',
+          score: 49,
+        },
+        {
+          name: 'naaadang',
+          score: 15,
+          grade: 4,
+        },
+        {
+          name: 'heize0502',
+          score: 43,
+          grade: 4,
+          homeAddress: {
+            si: '서울시',
+            gu: '성동구',
+            roadname: '한림말길',
+          },
+        },
+        {
+          name: 'wnwjdqkr',
+          score: 74,
+          grade: 4,
+        },
+        {
+          name: 'Runphg',
+          score: 37,
+          grade: 4,
+        },
+        {
+          name: 'Greenapple0101',
+          score: 0,
+          grade: 4,
+        },
+        {
+          name: 'wjm9765',
+          score: 72,
+          grade: 4,
+        },
+        {
+          name: 'xitxth',
+          score: 71,
+          homeAddress: {
+            si: '서울시',
+            gu: '용산구',
+            roadname: '동동',
+          },
+        },
+        {
+          name: 'minwoooya',
+          score: 63,
+          grade: 4,
+        },
+        {
+          name: '3astisland',
+          score: 87,
+          homeAddress: {
+            si: '서울시',
+            gu: '동작구',
+            roadname: '봉동',
+          },
+        },
+        {
+          name: 'Dlans00',
+          score: 35,
+          grade: 4,
+        },
+        {
+          name: '01choco',
+          score: 51,
+          homeAddress: {
+            si: '서울시',
+            gu: '동대문구',
+            roadname: '홍동',
+          },
+        },
+        {
+          name: 'qubeenyoung',
+          score: 98,
+          grade: 4,
+        },
+        {
+          name: 'dltmddus02',
+          score: 15,
+          grade: 4,
+        },
+        {
+          name: 'eatingrabbit',
+          score: 51,
+          homeAddress: {
+            si: '서울시',
+            gu: '서대문구',
+            roadname: '회기동',
+          },
+        },
+        {
+          name: '77hannah77',
+          score: 69,
+          grade: 4,
+        },
+        {
+          name: 'Sudorae',
+          score: 18,
+          grade: 4,
+        },
+        {
+          name: 'minseok209',
+          score: 11,
+          grade: 4,
+          homeAddress: {
+            si: '서울시',
+            gu: '서초구',
+            roadname: '교대역',
+          },
+        },
+        {
+          name: 'turkeyhan',
+          score: 74,
+        },
+      ]
+
+      window.onload = () => {
+        const createTd = (innerHTML) => {
+          const td = document.createElement('td')
+          td.innerHTML = innerHTML
+          return td
+        }
+        students.forEach((student) => {
+          const tr = document.createElement('tr')
+
+          tr.appendChild(createTd(student.name))
+          tr.appendChild(createTd(student.score))
+          if(student.age == undefined)
+            tr.appendChild(createTd(["정보없음"]))
+          else
+            tr.appendChild(createTd(student.age))
+          if(student.homeAddress == undefined)
+            tr.appendChild(createTd(["정보없음"]))
+          else
+            tr.appendChild(createTd([`${student.homeAddress.si} ${student.homeAddress.gu} ${student.homeAddress.roadname}`]))
+
+          const tbody = document.getElementsByTagName("tbody")[0]
+          tbody.appendChild(tr)
+        })
+      }
+    </script>
+  </body>
+</html>

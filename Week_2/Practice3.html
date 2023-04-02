@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        display: flex;
+        gap: 1.6rem;
+      }
+      .table-wrapper {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="table-wrapper">
+      <caption>
+        가격 인상 전
+      </caption>
+      <table class="products-before-price-increase">
+        <thead>
+          <tr>
+            <th>상품명</th>
+            <th>금액</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="table-wrapper">
+      <caption>
+        가격 인상 후
+      </caption>
+      <table class="products-after-price-increase">
+        <thead>
+          <tr>
+            <th>상품명</th>
+            <th>금액</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script>
+      const products = [
+        { name: '사과', price: 10_000 },
+        { name: '메론', price: 8_000 },
+      ]
+
+      const priceIncreasedProducts = [{...products[0]}, {...products[1]}]
+      priceIncreasedProducts.forEach((product) => {
+        product.price += 1_000
+      })
+
+      const appendTrElement = (tableClassName, innerHTMLs) => {
+        const tr = document.createElement('tr')
+
+        innerHTMLs.forEach((innerHTML) => {
+          const td = document.createElement('td')
+          td.innerHTML = innerHTML
+          tr.appendChild(td)
+        })
+
+        const table = document.getElementsByClassName(tableClassName)[0]
+        table.appendChild(tr)
+      }
+
+      window.onload = () => {
+        priceIncreasedProducts.forEach((product) => {
+          appendTrElement('products-after-price-increase', [
+            product.name,
+            product.price,
+          ])
+        })
+
+        products.forEach((product) => {
+          appendTrElement('products-before-price-increase', [
+            product.name,
+            product.price,
+          ])
+        })
+      }
+    </script>
+  </body>
+</html>

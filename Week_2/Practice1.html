@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice1</title>
+</head>
+
+<body>
+
+    <script>
+
+        const students = [
+            {
+                name: 'doun513',
+                score: 13,
+            },
+            {
+                name: 'dongyi97',
+                score: 81,
+            },
+            {
+                name: 'minwoo2246',
+                score: 11,
+            },
+            {
+                name: 'ruffdiesel',
+                score: 71,
+            },
+            {
+                name: 'wiishj',
+                score: 49,
+            },
+            {
+                name: 'naaadang',
+                score: 15,
+            },
+            {
+                name: 'heize0502',
+                score: 43,
+            },
+            {
+                name: 'wnwjdqkr',
+                score: 74,
+            },
+            {
+                name: 'Runphg',
+                score: 37,
+            },
+            {
+                name: 'Greenapple0101',
+                score: 0,
+            },
+            {
+                name: 'wjm9765',
+                score: 72,
+            },
+            {
+                name: 'xitxth',
+                score: 71,
+            },
+            {
+                name: 'minwoooya',
+                score: 63,
+            },
+            {
+                name: '3astisland',
+                score: 87,
+            },
+            {
+                name: 'Dlans00',
+                score: 35,
+            },
+            {
+                name: '01choco',
+                score: 51,
+            },
+            {
+                name: 'qubeenyoung',
+                score: 98,
+            },
+            {
+                name: 'dltmddus02',
+                score: 15,
+            },
+            {
+                name: 'eatingrabbit',
+                score: 51,
+            },
+            {
+                name: '77hannah77',
+                score: 69,
+            },
+            {
+                name: 'Sudorae',
+                score: 18,
+            },
+            {
+                name: 'minseok209',
+                score: 11,
+            },
+            {
+                name: 'turkeyhan',
+                score: 74,
+            },
+        ];
+        let sum = 0;
+        students.forEach((s) => {
+            sum += s.score;
+        });
+
+        const averageScore = sum / students.length;
+        const studentsWithOverAverage = students.map(student => {
+            return {
+                name: student.name,
+                overAverage: student.score > averageScore
+            }
+        })
+        console.log(
+            studentsWithOverAverage
+        );
+
+        
+    </script>
+</body>
+
+</html>
