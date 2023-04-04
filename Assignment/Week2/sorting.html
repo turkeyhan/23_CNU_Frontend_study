@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <table class="student-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="sort-by-name" onclick="sortByName('asc')">
+      이름으로 오름차순 정렬하기
+    </button>
+    <button class="sort-by-name" onclick="sortByName('desc')">
+      이름으로 내림차순 정렬하기
+    </button>
+    <script>
+        let students = [
+        {
+          name: 'doun513',
+        },
+        {
+          name: 'dongyi97',
+        },
+        {
+          name: 'minwoo2246',
+        },
+        {
+          name: 'ruffdiesel',
+        },
+        {
+          name: 'wiishj',
+        },
+        {
+          name: 'naaadang',
+        },
+        {
+          name: 'heize0502',
+        },
+        {
+          name: 'wnwjdqkr',
+        },
+        {
+          name: 'Runphg',
+        },
+        {
+          name: 'Greenapple0101',
+        },
+        {
+          name: 'wjm9765',
+        },
+        {
+          name: 'xitxth',
+        },
+        {
+          name: 'minwoooya',
+        },
+        {
+          name: '3astisland',
+        },
+        {
+          name: 'Dlans00',
+        },
+        {
+          name: '01choco',
+        },
+        {
+          name: 'qubeenyoung',
+        },
+        {
+          name: 'dltmddus02',
+        },
+        {
+          name: 'eatingrabbit',
+        },
+        {
+          name: '77hannah77',
+        },
+        {
+          name: 'Sudorae',
+        },
+        {
+          name: 'minseok209',
+        },
+        {
+          name: 'turkeyhan',
+        },
+      ]
+
+      const appendTrElement = (parentElement, innerHTMLs) => {
+        const tr = document.createElement('tr')
+
+        innerHTMLs.forEach((innerHTML) => {
+          const td = document.createElement('td')
+          td.innerHTML = innerHTML
+          tr.appendChild(td)
+        })
+        parentElement.appendChild(tr)
+      }
+      
+      const removeTrElement = (parentElement) => {
+        while(parentElement.firstChild){
+            parentElement.removeChild(parentElement.firstChild)
+        }
+      }
+
+      const sortByName = (order) => {
+        if (!['asc', 'desc'].includes(order)) {
+          throw new Error('지정되지 않은 정렬 순서입니다.')
+        }
+          
+        const table = document.getElementsByTagName('table')[0]
+        const tbody = table.getElementsByTagName('tbody')[0]
+        removeTrElement(tbody)
+        
+        if(order == 'asc')
+        {
+            students = students.sort((a, b) => {
+                if(a.name < b.name) return -1;
+            })
+        }
+        else{
+            students = students.sort((a, b) => {
+                if(a.name > b.name) return -1;
+            })
+        }
+        students.forEach((student) => {
+          appendTrElement(tbody, [student.name])
+        })
+      }
+      window.onload = () => {
+        const table = document.getElementsByTagName('table')[0]
+        const tbody = table.getElementsByTagName('tbody')[0]
+
+        students.forEach((student) => {
+          appendTrElement(tbody, [student.name])
+        })
+      }
+    </script>
+  </body>
+</html>
