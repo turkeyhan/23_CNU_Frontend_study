@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .real-time-board {
+        position: relative;
+		width: 416px;
+        height: 80px;
+      }
+      .subway-station {
+        position: absolute;
+        z-index: 10;
+      }
+      .subway {
+        position: absolute;
+        top: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="real-time-board"></div>
+    </div>
+    <script>
+      const WEIGHT = 10
+
+      const subwayStations = [
+        {
+          stationId: '1',
+          stationName: 'A',
+          xCoord: 0,
+        },
+        {
+          stationId: '2',
+          stationName: 'B',
+          xCoord: 10,
+        },
+        {
+          stationId: '3',
+          stationName: 'C',
+          xCoord: 20,
+        },
+        {
+          stationId: '4',
+          stationName: 'D',
+          xCoord: 30,
+        },
+        {
+          stationId: '5',
+          stationName: 'E',
+          xCoord: 40,
+        },
+      ]
+
+      let realTimeSubwayInfo = [
+        {
+          subwayId: '1000',
+          xCoord: 0,
+        },
+        {
+          subwayId: '1001',
+          xCoord: 1,
+        },
+        {
+          subwayId: '1002',
+          xCoord: 5,
+        },
+        {
+          subwayId: '1003',
+          xCoord: 10,
+        },
+        {
+          subwayId: '1004',
+          xCoord: 12,
+        },
+        {
+          subwayId: '1005',
+          xCoord: 19,
+        },
+        {
+          subwayId: '1006',
+          xCoord: 25,
+        },
+      ]
+
+      const createHTMLElement = (tagName, attributes) => {
+        const element = document.createElement(tagName)
+        Object.entries(attributes).forEach(([key, value]) => {
+          if (key === 'innerHTML') {
+            element.innerHTML = value
+            return
+          }
+          element.setAttribute(key, value)
+        })
+        return element
+      }
+
+      const createStationElement = (properties) => {
+        return createHTMLElement('span', {
+          class: 'subway-station',
+          innerHTML: '🚩',
+          ...properties,
+        })
+      }
+
+      const createSubwayElement = (properties) => {
+        return createHTMLElement('span', {
+          class: 'subway',
+          innerHTML: '🚋',
+          ...properties,
+        })
+      }
+      
+      (function move(){
+        const realTimeBoardElement =
+                document.getElementsByClassName('real-time-board')[0]
+            realTimeBoardElement.innerHTML = ''
+            const initializeSubwayStations = () => {
+                subwayStations.forEach((station) => {
+                    realTimeBoardElement.appendChild(
+                        createStationElement({
+                            style: `left: ${station.xCoord * WEIGHT}px`,
+                        })
+                    )
+                })
+            }
+
+            const updatesubways = () => {
+                realTimeSubwayInfo.forEach((subwayTrackingData) => {
+                subwayTrackingData.xCoord++
+                if(subwayTrackingData.xCoord == 41) subwayTrackingData.xCoord = 0
+                const subwayElement = createSubwayElement({
+                    style: `left: ${subwayTrackingData.xCoord * WEIGHT}px`,
+                })
+                realTimeBoardElement.appendChild(subwayElement)
+                })
+            }
+            initializeSubwayStations()
+            updatesubways()
+            setTimeout(move, 1000);
+      })();
+
+      window.onload = () => {
+        const realTimeBoardElement =
+          document.getElementsByClassName('real-time-board')[0]
+
+        const initializeSubwayStations = () => {
+          subwayStations.forEach((station) => {
+            realTimeBoardElement.appendChild(
+              createStationElement({
+                style: `left: ${station.xCoord * WEIGHT}px`,
+              })
+            )
+          })
+        }
+
+        const initializeSubways = () => {
+          realTimeSubwayInfo.forEach((subwayTrackingData) => {
+            const subwayElement = createSubwayElement({
+              style: `left: ${subwayTrackingData.xCoord * WEIGHT}px`,
+            })
+
+            realTimeBoardElement.appendChild(subwayElement)
+          })
+        }
+
+        initializeSubwayStations()
+        initializeSubways()
+      }
+    </script>
+  </body>
+</html>
